@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="default" extends="struts-default">
+
+        <action name="Logout" class="org.action.LogoutAction">
+		     <result name="success">/index.jsp</result>
+		</action>
+		
+        <action name="register" class="org.action.RegisterAction" >
+              <result name="regist">/login.jsp</result>
+        </action>  
+        
+        <action name="update" class="org.action.UpdateAction" >
+              <result name="update">/login.jsp</result>
+        </action>   
+        
+        <action name="userlogin" class="org.action.LoginAction">
+            <result name="success">/loginready.jsp</result>
+            <result name="input">/login.jsp</result>
+        </action>
+        
+       <action name="GetFoodList"  class="org.action.GetFoodList">
+				<result name="success">/welcome.jsp</result>
+	   </action>
+	   
+	    <action name="Foodview"  class="org.action.Foodview">
+				 <result name="view">/fooddetial.jsp</result>
+	   </action>
+	    
+	    <action name="Cart*"  class="org.action.CartAction" method="{1}">
+				 <result name="add">/foodready.jsp</result>
+				 <result name="view">/viewcart.jsp</result>
+				 <result name="order">/vieworder.jsp</result>
+				 <result name="remove">/viewcart.jsp</result>
+				 <result name="enpty">/enptycart.jsp</result>
+				 <result name="ordershow">/ordershow.jsp</result>
+	   </action>
+
+    </package>
+
+
+</struts>    

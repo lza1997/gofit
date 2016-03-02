@@ -1,0 +1,21 @@
+#MyEclipse Hibernate Properties
+#Thu Nov 19 20:24:49 CST 2015
+genBasicCompId=true
+sessionFactoryName=org.HibernateSessionFactory
+profile=
+daoSFId=
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=native
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=
+configFile=/gofit/src/hibernate.cfg.xml
+createConfigFile=true
+baseDaoClass=org.been.BaseHibernateDAO
