@@ -60,6 +60,16 @@ $("#Account_number").keyup(function(){
 		$("#submit").attr("disabled","false").removeClass("color")
 	}
 });
+$("#Account_number_modify").keyup(function(){
+	$("#Account_number").css("color","#000");
+	var W = $("#Account_number").val().length;
+	var E = $("#Password").val().length;
+	if(W > 3 & E > 4){
+	$("#submit").removeAttr("disabled","false").addClass("color")
+	}else{
+		$("#submit").attr("disabled","false").removeClass("color")
+	}
+});
 $("#Password").keyup(function(){
 	$("#Password").css("color","#000");
 	var W = $("#Account_number").val().length;

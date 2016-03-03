@@ -24,7 +24,7 @@
 		<div id="log_frame_2">
 			<div id="logo_div"><img src="images/logo.png" alt=""></div>
 			<form action="update" method="post">
-				<input  name="username" type="text" id="username" class="Account_number" value="" placeholder="用户名*请以英文和数字构成">
+				<input  name="username" type="text" id="username" class="Account_number_modify" value="" placeholder="用户名*请以英文和数字构成">
 				
 				<input name="pwd" type="password" id="Password_2" class="Password" value="" placeholder="密码">
 				<select name="city" class="hide" id="select">
