@@ -152,7 +152,7 @@
 	<div id="nav">
 		<span> | 中国健康食品互联网第一品牌</span>
 		<div id="children_page">
-			<a href="index.html" >首页</a>
+			<a href="GetFoodList" >首页</a>
 			<a href="children_pages/lowfood.html" >减脂健康餐</a>
 			<a href="children_pages/fruit.html" >营养果蔬汁</a>
 			<a href="children_pages/activity.html" >最新活动</a>
@@ -176,7 +176,7 @@
 			  <s:if test="userinfo!=null">
 					<div align="center" class="text">								    
 							<!--写出user对象的username属性-->
-							<p>user</p><s:property value="userinfo.username"/>
+							<p><s:property value="userinfo.username"/></p>
 							<!--“修改资料”链接-->
 						<ul style="">	
 							<!--“注销”链接-->
@@ -257,8 +257,7 @@
     <s:iterator id="orders" value="orders">
 		<div>
 				<img src="<s:property  value="foodinfo.picture" />"/>
-			    <a href='javascript:foodDetail(<s:property value="foodinfo.id"/>)' class="text"><s:property  value="foodinfo.foodName" /> </a>
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span> <s:property  value="productnum" /></span></div>
+			    <div class="commodity_name"><span><s:property  value="foodinfo.foodName" /></span><span> X </span><span> <s:property  value="productnum" /></span></div>
 			    <div class="commodity_name money"><s:property  value="money" />￥</div>
 			    <div><a href='javascript:cartremove(<s:property value="foodinfo.id"/>)'>移除</a></div>
 		</div>  
@@ -270,7 +269,7 @@
 
 <div class="last_wrap">
   	<div class="price_all">
-  		总价 : <span>99￥</span><s:property  value="totalmoney" />
+  		总价 : <span><s:property  value="totalmoney" />￥</span>
   	</div>
   	<div class="last_info">
 	  	<form action="Cartneworder">
@@ -287,7 +286,20 @@
 
 
 </body>
+<script language="javascript">
 
+	function emulatePay() {
+		alert("fee paid!");
+		submit();
+	}
+	function foodDetail(id) {
+		window.open("Foodview.action?id=" + id);
+	}
+	function cartremove(id) {
+		location.replace("Cartremove.action?id=" + id);
+	}
+
+</script>
 <script src="js/jquery.js"></script>
 <!-- <script src="js/gofit.js"></script> -->
 <script src="js/common.js"></script>
