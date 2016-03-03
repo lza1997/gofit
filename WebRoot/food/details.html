@@ -172,9 +172,10 @@
 
 <div class="one">
 	<div class="cart_wrap">
-	  	<img src="images/pic_2.jpg"/>
-		<div class="product_name">苹果大礼包<s:property value="foodinfo.foodName"/></div>
-		<div class="price">45￥<s:property value="foodinfo.price"/></div>
+	 <s:form>
+	  	<img src="<s:property  value="foodinfo.picture" />"/>
+		<div class="product_name"><s:property value="foodinfo.foodName"/></div>
+		<div class="price"><s:property value="foodinfo.price"/>￥</div>
 		<form>
 		    <input id="number" type="text" name="buynumber" onFocus="this.value=''" value="数量">
 			<a href='javascript:Cartadd(<s:property value="foodinfo.id"/>)' class="add_to_cart">放入购物车</a>	
@@ -183,12 +184,12 @@
 
 	<div class="informations">
 		<div class="informations_wrap">
-		  <s:form>
-			<div>简介：456546546<s:property value="foodinfo.intro"/></div>
-			<div>类型 ：456546546<s:property value="foodinfo.foodtype.typename"/></div>
-			<div>销量：456546546<s:property value="foodinfo.salenum"/></div>
-			<div>城市：456546546<s:property value="foodinfo.city"/></div>
-			<div>上架时间：456546546<s:property value="foodinfo.date"/></div>
+		 
+			<div>简介：<s:property value="foodinfo.intro"/></div>
+			<div>类型 ：<s:property value="foodinfo.foodtype.typename"/></div>
+			<div>销量：<s:property value="foodinfo.salenum"/></div>
+			<div>城市：<s:property value="foodinfo.city"/></div>
+			<div>上架时间：<s:property value="foodinfo.date"/></div>
 		  </s:form>
 		</div>
 

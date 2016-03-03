@@ -93,22 +93,22 @@ $("#Password_2").keyup(function(){
 });
 //注册时候选择城市
 //显示和隐藏备选菜单
-$("#select").click(function(){
-	$("form>ul").toggle();
-});
-$("#select,form>ul").mouseleave(function(){
-	$("form>ul").addClass("hide").css("display","none")
-});
-$("form>ul").hover(
-function(){
-	$("form>ul").removeClass("hide").css("display","block")
-},
-function(){
-	$("form>ul").addClass("hide").css("display","none")
-});
-//选择城市
-$("form>ul>li").click(function(){
-	var my_city = this.innerHTML;
-	$("#select").html(my_city);
-	$("form>ul").addClass("hide").css("display","none");
-})
+// $("#select").click(function(){
+// 	$("form>select").toggle();
+// });
+// $("#select,form>ul").mouseleave(function(){
+// 	$("form>select").addClass("hide").css("display","none")
+// });
+// $("form>ul").hover(
+// function(){
+// 	$("form>select").removeClass("hide").css("display","block")
+// },
+// function(){
+// 	$("form>select").addClass("hide").css("display","none")
+// });
+// //选择城市
+// $("form>select>option").click(function(){
+// 	var my_city = this.innerHTML;
+// 	$("#select").html(my_city);
+// 	$("form>select").addClass("hide").css("display","none");
+// })

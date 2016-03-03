@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 
-	<div id="mask" class="hide">
+	<div id="mask" class="">
 		<div id="log_frame">
 			<div id="logo_div"><img src="images/logo.png" alt=""></div>
 			<form action="userlogin" method="get">

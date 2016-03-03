@@ -250,47 +250,18 @@
 <!-- <hr style="height:1px" /> -->
 
   <table  border="0" align="center"> 
-    <s:iterator id="foodinfos" value="foodinfos">
+
     <div class="commodity_wrap">
-     	<div>
-				<img src="images/pic_1.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>3</span></div>
-			    <div class="commodity_name money">343￥</div>
-			    <div>移除</div>
-		</div>
-
-     	<div>
-				<img src="images/pic_2.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
-			    <div class="commodity_name money">45￥</div>
-			    <div>移除</div>
-		</div>
-     	<div>
-				<img src="images/pic_3.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
-			    <div class="commodity_name money">12￥</div>
-			    <div>移除</div>
-		</div>
-     	<div>
-				<img src="images/pic_1.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>2</span></div>
-			    <div class="commodity_name money">36￥</div>
-			    <div>移除</div>
-		</div>
+    <s:iterator id="orders" value="orders">
 		<div>
-				<img src="images/pic_1.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
-			    <div class="commodity_name money">343￥</div>
-			    <div>移除</div>
-		</div>
-
+				<img src="<s:property  value="foodinfo.picture" />"/>
+			    <a href='javascript:foodDetail(<s:property value="foodinfo.id"/>)' class="text"><s:property  value="foodinfo.foodName" /> </a>
+			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span> <s:property  value="productnum" /></span></div>
+			    <div class="commodity_name money"><s:property  value="money" />￥</div>
+			    <div><a href='javascript:cartremove(<s:property value="foodinfo.id"/>)'>移除</a></div>
+		</div>  
+	</s:iterator> 
 	</div>
-	</s:iterator>
   </table>
 
 	<div class="clear"></div>

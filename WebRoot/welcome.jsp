@@ -201,8 +201,6 @@
 		    </a>
 		</div>
     </div>
-
-     	
 	</s:iterator>
   </table>
 
