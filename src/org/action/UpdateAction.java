@@ -28,6 +28,7 @@ public class UpdateAction extends ActionSupport implements SessionAware{
 		if (userinfo!=null) {
 			userinfo.setUsername(userinfo.getUsername());
 			userinfo.setPwd(pwd);
+			userinfo.setEmail(email);
 			userinfo.setCity(city);
 			userinfo.setAddress(address);
 			Session session = HibernateSessionFactory.getSession();
