@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script language="javascript">
+<!--
+
+	function foodDetail(id) {
+		window.open("Foodview.action?id=" + id);
+	}
+//-->
+</script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>GOFit Food</title>
@@ -150,7 +158,7 @@
 	<div id="nav">
 		<span> | 中国健康食品互联网第一品牌</span>
 		<div id="children_page">
-			<a href="index.html" >首页</a>
+			<a href="GetFoodList" >首页</a>
 			<a href="children_pages/lowfood.html" >减脂健康餐</a>
 			<a href="children_pages/fruit.html" >营养果蔬汁</a>
 			<a href="children_pages/activity.html" >最新活动</a>
@@ -174,7 +182,7 @@
 			  <s:if test="userinfo!=null">
 					<div align="center" class="text">								    
 							<!--写出user对象的username属性-->
-							<p>user</p><s:property value="userinfo.username"/>
+							<p><s:property value="userinfo.username"/></p>
 							<!--“修改资料”链接-->
 						<ul style="">	
 							<!--“注销”链接-->
@@ -246,46 +254,21 @@
 	</div>
  -->
   <h3 id="header">订购成功！</h3>
-	<h5 id="head_sub">fhghgfhgnfnhdnhgngncvbcgf</h5>
+	<!--<h5 id="head_sub">fhghgfhgnfnhdnhgngncvbcgf</h5>   --> 
 <!-- <hr style="height:1px" /> -->
-
+<s:form action="Cartneworder">
   <table  border="0" align="center"> 
-    <s:iterator id="foodinfos" value="foodinfos">
+     <s:iterator id="orders" value="orders">
     <div class="commodity_wrap">
-     	<div>
-				<img src="images/pic_1.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>3</span></div>
-			    <div class="commodity_name money">343￥</div>
-			    <div></div>
-		</div>
-
-     	<div>
-				<img src="images/pic_2.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
-			    <div class="commodity_name money">45￥</div>
-			    <div></div>
-		</div>
-     	<div>
-				<img src="images/pic_3.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
-			    <div class="commodity_name money">12￥</div>
-			    <div></div>
-		</div>
-     	<div>
-				<img src="images/pic_1.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>2</span></div>
-			    <div class="commodity_name money">36￥</div>
-			    <div></div>
-		</div>
+         <tr>
+      <td> <a href='javascript:foodDetail(<s:property value="foodinfo.id"/>)' class="text"><s:property  value="foodinfo.foodName" /> </a></td>
+		       <td> <s:property  value="productnum" />* <s:property  value="foodinfo.price" />=<s:property  value="money" /></td>
+    	</tr>
 		<div>
-				<img src="images/pic_1.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
-			    <div class="commodity_name money">343￥</div>
+				<a href='javascript:foodDetail(<s:property value="foodinfo.id"/>)' class="">
+				<img src="<s:property  value="foodinfo.picture" />"/></a>
+			    <div class="commodity_name"><span><s:property  value="foodinfo.foodName" /></span><span> X </span><span> <s:property  value="productnum" /></span></div>
+			    <div class="commodity_name money"><s:property  value="money" />￥</div>
 			    <div></div>
 		</div>
 
@@ -293,20 +276,15 @@
 	</s:iterator>
   </table>
 
-	<div class="clear"></div>
-
 <div class="last_wrap">
   	<div class="price_all">
-  		总价 : <span>99￥</span><s:property  value="totalmoney" />
+  		总价 : <span><s:property  value="totalmoney" />￥</span>
   	</div>
   	<div class="last_info">
-	  	<form action="Cartneworder">
-	         <div>收货地址 ：无锡恩得乐思科技有限公司</div>
-	          <div>联系电话 ：terteree</div>
-	        <input class="jiezhang" type="submit" onClick="emulatePay()" value="取消订单">  
-	    </form>
+	         <div>收货地址 ：<s:property  value="address" /></div>
+	          <div>联系电话 ：<s:property  value="phonenum" /></div>
   	</div>
-
+  </s:form>
   	<div class="bottom">苏ICP备15049153号 无锡恩得乐思科技有限公司</div>
 </div>
 
