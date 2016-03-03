@@ -24,5 +24,10 @@
 	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.lib.hibernate41.MYECLIPSE_HIBERNATE_4_1_CORE"/>
 	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.struts2.MYECLIPSE_STRUTS21_CORE"/>
 	<classpathentry kind="lib" path="D:/My study/JavaWeb/servlet/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="/create_direct_pay_by_user-JAVA-UTF-8/WebRoot/WEB-INF/lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="/create_direct_pay_by_user-JAVA-UTF-8/WebRoot/WEB-INF/lib/commons-httpclient-3.0.1.jar"/>
+	<classpathentry kind="lib" path="/create_direct_pay_by_user-JAVA-UTF-8/WebRoot/WEB-INF/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/create_direct_pay_by_user-JAVA-UTF-8/WebRoot/WEB-INF/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/create_direct_pay_by_user-JAVA-UTF-8/WebRoot/WEB-INF/lib/jaxen-1.1-beta-6.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
