@@ -196,7 +196,6 @@
      	<div>
      		<a href='javascript:foodDetail(<s:property value="id"/>)' class="">
 				<img src="<s:property  value="picture" />"/>
-			    <s:property value="foodName" />
 			    <div class="commodity_name"><s:property value="foodName" /></div>
 			    <div class="commodity_name money"><s:property value="price" /></div>
 		    </a>
