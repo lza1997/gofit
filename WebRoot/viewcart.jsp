@@ -256,7 +256,8 @@
     <div class="commodity_wrap">
     <s:iterator id="orders" value="orders">
 		<div>
-				<img src="<s:property  value="foodinfo.picture" />"/>
+				<a href='javascript:foodDetail(<s:property value="foodinfo.id"/>)' class="">
+				<img src="<s:property  value="foodinfo.picture" />"/></a>
 			    <div class="commodity_name"><span><s:property  value="foodinfo.foodName" /></span><span> X </span><span> <s:property  value="productnum" /></span></div>
 			    <div class="commodity_name money"><s:property  value="money" />￥</div>
 			    <div><a href='javascript:cartremove(<s:property value="foodinfo.id"/>)'>移除</a></div>
