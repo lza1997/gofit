@@ -25,12 +25,12 @@ public class AlipayConfig {
 	
 	//↓↓↓↓↓↓↓↓↓↓请在这里配置您的基本信息↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 	// 合作身份者ID，以2088开头由16位纯数字组成的字符串
-	public static String partner = "";
+	public static String partner = "2088121309016232";
 	
 	// 收款支付宝账号，一般情况下收款账号就是签约账号
-	public static String seller_email = "";
+	public static String seller_email = "frank@letsfit.cn";
 	// 商户的私钥
-	public static String key = "";
+	public static String key = "badu11d2skufidlk7j0x5xouiu8sovsk";
 
 	//↑↑↑↑↑↑↑↑↑↑请在这里配置您的基本信息↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 	

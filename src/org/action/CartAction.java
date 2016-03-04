@@ -7,9 +7,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.HibernateSessionFactory;
 import org.DAO.FoodinfoDAO;
 import org.DAO.OrderDAO;
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.SessionAware;
 import org.been.Foodinfo;
 import org.been.Foodtype;
@@ -19,6 +25,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.interceptor.AuthenticationInterceptor;
 
+import com.alipay.util.httpClient.HttpRequest;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class CartAction extends ActionSupport implements SessionAware{
@@ -61,7 +68,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 		}else {
 			foodmap.put(id, foodmap.get(id)+number);
 		} 
-		//´æµ½sessionÖÐ
+		//ï¿½æµ½sessionï¿½ï¿½
 		sessionMap.put("cart", foodmap);
 		return "add" ;
 	}
@@ -142,12 +149,13 @@ public class CartAction extends ActionSupport implements SessionAware{
 			foodinfo.setSalenum(foodinfo.getSalenum()+order.getProductnum());
 			order.setAddress(address);
 			order.setPhonenum(phonenum);
-			Date date = new Date();//»ñµÃÏµÍ³Ê±¼ä.
-			String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);//½«Ê±¼ä¸ñÊ½×ª»»³É·ûºÏTimestampÒªÇóµÄ¸ñÊ½.
-			Timestamp goodsCdate =Timestamp.valueOf(nowTime);//°ÑÊ±¼ä×ª»»
+			Date date = new Date();//ï¿½ï¿½ï¿½ÏµÍ³Ê±ï¿½ï¿½.
+			String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);//ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ê½×ªï¿½ï¿½ï¿½É·ï¿½ï¿½TimestampÒªï¿½ï¿½Ä¸ï¿½Ê½.
+			Timestamp goodsCdate =Timestamp.valueOf(nowTime);//ï¿½ï¿½Ê±ï¿½ï¿½×ªï¿½ï¿½
 			order.setOrderdate(goodsCdate);
-			order.setOrdernum(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
-			order.setStatus("·¢»õ");
+			String orderNumber = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+			order.setOrdernum(orderNumber);
+			order.setStatus("ï¿½ï¿½ï¿½ï¿½");
 			totalmoney=totalmoney+order.getMoney();
 			Session session = HibernateSessionFactory.getSession();
 			Transaction tx = session.beginTransaction();
@@ -156,6 +164,13 @@ public class CartAction extends ActionSupport implements SessionAware{
 			tx.commit();
 			session.close();
 			sessionMap.remove("cart");
+			HttpServletRequest request = ServletActionContext.getRequest();
+		    ServletContext servletContext = ServletActionContext.getServletContext();
+		    request.setAttribute("WIDout_trade_no",order.getOrdernum());
+		    request.setAttribute("WIDsubject",order.getFoodinfo().getFoodName());
+		    request.setAttribute("WIDtotal_fee",order.getMoney());
+		    request.setAttribute("WIDbody",order.getFoodinfo().getFoodName());
+		    request.setAttribute("WIDbody","Foodview.action?id="+order.getFoodinfo().getId());
 		}
 		return "order";
 		
