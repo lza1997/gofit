@@ -144,6 +144,26 @@
 			opacity: 0.5;
 		    margin-top: 60px !important;
 		}
+		.content {
+			width: 100%;
+		}
+		.content>div {
+			width: 100%;
+			text-align: center;
+			padding-top: 30px;
+			font-size: 1.1em;
+			font-weight: 600;
+			letter-spacing: 2px;
+			opacity: .4;
+		}
+		.content>.svg1 {
+			display: block;
+			margin: 0 auto;
+			width: 150px;
+			opacity: 0.3;
+			padding-top: 14%;
+
+		}
 	</style>
 </head>
 <body>
@@ -210,105 +230,34 @@
 			<p>已有账号？点此立即登录</p>
 		</div>
 	</div>
-<!-- 	<div id="mask" class="hide">
-		<div id="log_frame">
-			<div id="logo_div"><img src="images/logo.png" alt=""></div>
-			<form action="/example/html/form_action.asp" method="get">
-				<input type="text" id="Account_number" class="Account_number" value="" placeholder="邮箱">
-				<input type="password" id="Password" class="Password" value="" placeholder="密码">
-				<input type="submit" id="submit" value="登 录" disabled="true">
-			</form>
-			<p>点此注册新用户</p>
-		</div>
+
+
+	<div class="content">
+		<svg class="svg1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+			<g>
+			<g>
+				<g>
+					<path d="M608.126,124.457c-3.239-3.945-8.075-6.233-13.179-6.233H107.539L91.367,34.782c-1.555-8.018-8.577-13.81-16.743-13.81
+						h-57.57C7.633,20.972,0,28.608,0,38.026s7.633,17.054,17.054,17.054h43.501l73.439,384.296
+						c1.435,8.155,8.519,14.101,16.796,14.101h60.242c-32.342,5.858-56.956,34.204-56.956,68.21c0,38.233,31.106,69.34,69.34,69.34
+						c38.233,0,69.336-31.106,69.336-69.34c0-34.005-24.609-62.351-56.953-68.21h221.5c-32.344,5.858-56.959,34.204-56.959,68.21
+						c0,38.233,31.109,69.34,69.344,69.34c38.233,0,69.339-31.106,69.339-69.34c0-34.005-24.612-62.351-56.953-68.21h51.932
+						c9.418,0,17.054-7.636,17.054-17.054c0-9.42-7.636-17.054-17.054-17.054H165.109l-5.224-29.721h387.974
+						c8.142,0,15.144-5.752,16.73-13.736l47.086-237.314C612.667,133.591,611.365,128.403,608.126,124.457z M504.917,521.687
+						c0,19.426-15.805,35.23-35.23,35.23c-19.428,0-35.236-15.804-35.236-35.23c0-19.426,15.808-35.23,35.236-35.23
+						C489.112,486.458,504.917,502.26,504.917,521.687z M258.646,521.687c0,19.426-15.802,35.23-35.227,35.23
+						c-19.428,0-35.233-15.804-35.233-35.23c0-19.426,15.805-35.23,35.233-35.23C242.842,486.458,258.646,502.26,258.646,521.687z
+						 M153.539,355.539l-23.13-119.328h64.366l19.605,119.328H153.539z M327.099,355.539h-78.154l-19.605-119.328h97.76V355.539z
+						 M440.591,355.539h-79.384V236.212h96.513L440.591,355.539z M533.857,355.539H475.05l17.13-119.328h65.352L533.857,355.539z
+						 M564.299,202.104h-440.5l-9.648-49.77h460.025L564.299,202.104z"/>
+				</g>
+			</g>
+			</g>
+		</svg>
+		<div>您还没买任何东西，快去首页看看吧！</div>
 	</div>
 
-	<div id="mask_2" class="hide">
-		<div id="log_frame_2">
-			<div id="logo_div"><img src="images/logo.png" alt=""></div>
-			<form action="/example/html/form_action.asp" method="get">
-				<input type="text" id="username" class="Account_number" value="" placeholder="用户名*请以英文和数字构成">
-				<input type="text" id="Account_number_2" class="Account_number" value="" placeholder="邮箱">
-				<input type="password" id="Password_2" class="Password" value="" placeholder="密码">
-				<div name="cars" id="select">
-					北京
-				</div>
-				<ul class="hide">
-					<li>北京</li>
-					<li>上海</li>
-					<li>广州</li>
-					<li>深圳</li>
-					<li>无锡</li>
-				</ul>
-				<input type="submit" id="submit_2" value="注 册" disabled="true">
-			</form>
-			<p>已有账号？点此立即登录</p>
-		</div>
-	</div>
- -->
-  <h3 id="header">我的购物车</h3>
-	<h5 id="head_sub">fhghgfhgnfnhdnhgngncvbcgf</h5>
-<!-- <hr style="height:1px" /> -->
-
-  <table  border="0" align="center"> 
-    <s:iterator id="foodinfos" value="foodinfos">
-    <div class="commodity_wrap">
-     	<div>
-				<img src="images/pic_1.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>3</span></div>
-			    <div class="commodity_name money">343￥</div>
-			    <div>移除</div>
-		</div>
-
-     	<div>
-				<img src="images/pic_2.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
-			    <div class="commodity_name money">45￥</div>
-			    <div>移除</div>
-		</div>
-     	<div>
-				<img src="images/pic_3.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
-			    <div class="commodity_name money">12￥</div>
-			    <div>移除</div>
-		</div>
-     	<div>
-				<img src="images/pic_1.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>2</span></div>
-			    <div class="commodity_name money">36￥</div>
-			    <div>移除</div>
-		</div>
-		<div>
-				<img src="images/pic_1.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
-			    <div class="commodity_name money">343￥</div>
-			    <div>移除</div>
-		</div>
-
-	</div>
-	</s:iterator>
-  </table>
-
-	<div class="clear"></div>
-
-<div class="last_wrap">
-  	<div class="price_all">
-  		总价 : <span>99￥</span><s:property  value="totalmoney" />
-  	</div>
-  	<div class="last_info">
-	  	<form action="Cartneworder">
-	         <div>收货地址 <input type="text" name="address"></div>
-	          <div>联系电话 <input type="text" name="phonenum"></div>
-	        <input class="jiezhang" type="submit" onClick="emulatePay()" value="结账">  
-	    </form>
-  	</div>
-
-  	<div class="bottom">苏ICP备15049153号 无锡恩得乐思科技有限公司</div>
-</div>
 
 
 
@@ -333,9 +282,9 @@
 
 
 //移除购物车中的商品
-$(".commodity_wrap>div div:last-child").click(function(){
-	$(this).parent().parent().remove();
-})
+// $(".commodity_wrap>div div:last-child").click(function(){
+// 	$(this).parent().parent().remove();
+// })
 
 </script>
 </html>

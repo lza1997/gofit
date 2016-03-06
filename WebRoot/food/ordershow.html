@@ -64,13 +64,23 @@
 			height: 150px;
 			background-color: #fff;
 		}
-		.commodity_wrap>div div:last-child {
+		.commodity_wrap>div div:nth-child(3) {
 			/*cursor: pointer;*/
 			position: absolute;
 		    top: 150px;
 		    left: 190px;
 		    opacity: 0.4;
 		    width: 50px;
+		}
+		.commodity_wrap>div div:last-child {
+			position: absolute;
+			top: 200px;
+			color:rgba(0,0,0,0.4);
+			font-size: .8em;
+			padding-left: 10px;
+			background: #fff;
+			width: 250px;
+			height: 30px;
 		}
 /*		.commodity_wrap>div div:last-child:hover {
 			opacity: 1;
@@ -86,6 +96,7 @@
 		.money {
 			color: rgba(0,0,0,1) !important;
 			padding-left: 10px;
+			padding-bottom: 40px !important;
 			font-size: 0.8em;
 			margin-bottom: 20px;
 			padding-bottom: 14px;
@@ -222,19 +233,52 @@
 <!-- <hr style="height:1px" /> -->
 
   <table  border="0" align="center"> 
-<s:form action="Cartneworder">
+    <s:iterator id="foodinfos" value="foodinfos">
     <div class="commodity_wrap">
-     	<s:iterator id="haveorderList" value="haveorderList">
-		<div>
-				<img src="<s:property  value="foodinfo.picture" />"/>
-			    
-			    <div class="commodity_name"><span><s:property value="foodName" /></span><span> X </span><span> <s:property  value="productnum" /></span></div>
-			    <div class="commodity_name money"><s:property  value="money" />￥</div>
-			    <div><s:property  value="status" /></div>
+     	<div>
+				<img src="images/pic_1.jpg"/>
+			    <s:property value="foodName" />
+			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>3</span></div>
+			    <div class="commodity_name money">343￥</div>
+			    <div>已发货</div>
+			    <div>订单号： <span>55676575455</span></div>
 		</div>
-	</s:iterator>
+
+     	<div>
+				<img src="images/pic_2.jpg"/>
+			    <s:property value="foodName" />
+			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
+			    <div class="commodity_name money">45￥</div>
+			    <div>已发货</div>
+			    <div>订单号： <span>55676575455</span></div>
+		</div>
+     	<div>
+				<img src="images/pic_3.jpg"/>
+			    <s:property value="foodName" />
+			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
+			    <div class="commodity_name money">12￥</div>
+			    <div>已发货</div>
+			    <div>订单号： <span>55676575455</span></div>
+		</div>
+     	<div>
+				<img src="images/pic_1.jpg"/>
+			    <s:property value="foodName" />
+			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>2</span></div>
+			    <div class="commodity_name money">36￥</div>
+			    <div>已发货</div>
+			    <div>订单号： <span>55676575455</span></div>
+		</div>
+		<div>
+				<img src="images/pic_1.jpg"/>
+			    <s:property value="foodName" />
+			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
+			    <div class="commodity_name money">343￥</div>
+			    <div>已发货</div>
+			    <div>订单号： <span>55676575455</span></div>
+		</div>
+
 	</div>
-  </s:form>
+	</s:iterator>
   </table>
 
 	<div class="clear"></div>

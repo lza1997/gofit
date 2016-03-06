@@ -219,25 +219,21 @@
 		</div>
 	</div>
 
-<s:form action="Cartneworder">
-  <h3 id="header">我的订单</h3>
-	<h5 id="head_sub">订单号：<span><s:property  value="ordernum" /></span></h5>
+
 <!-- <hr style="height:1px" /> -->
-
   <table  border="0" align="center"> 
-
     <div class="commodity_wrap">
-     	<s:iterator id="haveorderList" value="haveorderList">
+      	<s:iterator id="haveorderList" value="haveorderList">
 		<div>
-				<img src="<s:property  value="foodinfo.picture" />"/>
-			    
+				<img src="<s:property  value="foodinfo.picture" />"/> 
 			    <div class="commodity_name"><span><s:property value="foodName" /></span><span> X </span><span> <s:property  value="productnum" /></span></div>
 			    <div class="commodity_name money"><s:property  value="money" />￥</div>
 			    <div><s:property  value="status" /></div>
+			    <div>订单号： <span><s:property  value="ordernum" /></span></div>
 		</div>
-	</s:iterator>
+		</s:iterator>
 	</div>
-  </s:form>
+
   </table>
 
 	<div class="clear"></div>
