@@ -32,6 +32,15 @@
     <servlet-name>test</servlet-name>
     <url-pattern>/test.servlet</url-pattern>
   </servlet-mapping>
+  
+ <servlet>
+ 	<servlet-name>pay</servlet-name>
+ 	<servlet-class>org.action.PayServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+    <servlet-name>pay</servlet-name>
+    <url-pattern>/pay.servlet</url-pattern>
+  </servlet-mapping>
  
   
   </web-app>
