@@ -1,13 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>GOFit Food</title>
 	<link rel="stylesheet" href="css/nav.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main_page_style.css">
@@ -65,16 +61,15 @@
 			background-color: #fff;
 		}
 		.commodity_wrap>div div:last-child {
-			/*cursor: pointer;*/
+			cursor: pointer;
 			position: absolute;
 		    top: 150px;
-		    left: 190px;
+		    left: 204px;
 		    opacity: 0.4;
-		    width: 50px;
 		}
-/*		.commodity_wrap>div div:last-child:hover {
+		.commodity_wrap>div div:last-child:hover {
 			opacity: 1;
-		}*/
+		}
 		.commodity_name {
 			width: 250px;
 			display: block;
@@ -147,7 +142,7 @@
 			font-size: 0.8em;
 			text-align: center;
 			opacity: 0.5;
-		    margin-top: 150px !important;
+		    margin-top: 60px !important;
 		}
 	</style>
 </head>
@@ -215,30 +210,91 @@
 			<p>已有账号？点此立即登录</p>
 		</div>
 	</div>
+<!-- 	<div id="mask" class="hide">
+		<div id="log_frame">
+			<div id="logo_div"><img src="images/logo.png" alt=""></div>
+			<form action="/example/html/form_action.asp" method="get">
+				<input type="text" id="Account_number" class="Account_number" value="" placeholder="邮箱">
+				<input type="password" id="Password" class="Password" value="" placeholder="密码">
+				<input type="submit" id="submit" value="登 录" disabled="true">
+			</form>
+			<p>点此注册新用户</p>
+		</div>
+	</div>
 
-
-  <h3 id="header">我的订单</h3>
-	<h5 id="head_sub">订单号：<span>32435457657567</span></h5>
+	<div id="mask_2" class="hide">
+		<div id="log_frame_2">
+			<div id="logo_div"><img src="images/logo.png" alt=""></div>
+			<form action="/example/html/form_action.asp" method="get">
+				<input type="text" id="username" class="Account_number" value="" placeholder="用户名*请以英文和数字构成">
+				<input type="text" id="Account_number_2" class="Account_number" value="" placeholder="邮箱">
+				<input type="password" id="Password_2" class="Password" value="" placeholder="密码">
+				<div name="cars" id="select">
+					北京
+				</div>
+				<ul class="hide">
+					<li>北京</li>
+					<li>上海</li>
+					<li>广州</li>
+					<li>深圳</li>
+					<li>无锡</li>
+				</ul>
+				<input type="submit" id="submit_2" value="注 册" disabled="true">
+			</form>
+			<p>已有账号？点此立即登录</p>
+		</div>
+	</div>
+ -->
+  <h3 id="header">我的购物车</h3>
+	<h5 id="head_sub">fhghgfhgnfnhdnhgngncvbcgf</h5>
 <!-- <hr style="height:1px" /> -->
 
   <table  border="0" align="center"> 
-<s:form action="Cartneworder">
+    <s:iterator id="foodinfos" value="foodinfos">
     <div class="commodity_wrap">
-     	<s:iterator id="haveorderList" value="haveorderList">
-		<div>
-				<img src="<s:property  value="foodinfo.picture" />"/>
-			    
-			    <div class="commodity_name"><span><s:property value="foodName" /></span><span> X </span><span> <s:property  value="productnum" /></span></div>
-			    <div class="commodity_name money"><s:property  value="money" />￥</div>
-			    <div><s:property  value="status" /></div>
+     	<div>
+				<img src="images/pic_1.jpg"/>
+			    <s:property value="foodName" />
+			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>3</span></div>
+			    <div class="commodity_name money">343￥</div>
+			    <div>移除</div>
 		</div>
-	</s:iterator>
+
+     	<div>
+				<img src="images/pic_2.jpg"/>
+			    <s:property value="foodName" />
+			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
+			    <div class="commodity_name money">45￥</div>
+			    <div>移除</div>
+		</div>
+     	<div>
+				<img src="images/pic_3.jpg"/>
+			    <s:property value="foodName" />
+			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
+			    <div class="commodity_name money">12￥</div>
+			    <div>移除</div>
+		</div>
+     	<div>
+				<img src="images/pic_1.jpg"/>
+			    <s:property value="foodName" />
+			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>2</span></div>
+			    <div class="commodity_name money">36￥</div>
+			    <div>移除</div>
+		</div>
+		<div>
+				<img src="images/pic_1.jpg"/>
+			    <s:property value="foodName" />
+			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
+			    <div class="commodity_name money">343￥</div>
+			    <div>移除</div>
+		</div>
+
 	</div>
-  </s:form>
+	</s:iterator>
   </table>
 
 	<div class="clear"></div>
-<!-- 
+
 <div class="last_wrap">
   	<div class="price_all">
   		总价 : <span>99￥</span><s:property  value="totalmoney" />
@@ -251,15 +307,35 @@
 	    </form>
   	</div>
 
-
-</div> -->
-
-
   	<div class="bottom">苏ICP备15049153号 无锡恩得乐思科技有限公司</div>
+</div>
+
+
+
 
 </body>
 
 <script src="js/jquery.js"></script>
 <!-- <script src="js/gofit.js"></script> -->
 <script src="js/common.js"></script>
+<script type='text/javascript'>
+//     (function(m, ei, q, i, a, j, s) {
+//         m[a] = m[a] || function() {
+//             (m[a].a = m[a].a || []).push(arguments)
+//         };
+//         j = ei.createElement(q),
+//             s = ei.getElementsByTagName(q)[0];
+//         j.async = true;
+//         j.src = i;
+//         s.parentNode.insertBefore(j, s)
+//     })(window, document, 'script', '//eco-api.meiqia.com/dist/meiqia.js', '_MEIQIA');
+//     _MEIQIA('entId', 1835);
+
+
+//移除购物车中的商品
+$(".commodity_wrap>div div:last-child").click(function(){
+	$(this).parent().parent().remove();
+})
+
+</script>
 </html>
