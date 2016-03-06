@@ -273,7 +273,7 @@
   		总价 : <span><s:property  value="totalmoney" />￥</span>
   	</div>
   	<div class="last_info">
-	  	<form action="Cartneworder">
+	  	<form action="test.servlet">
 	         <div>收货地址 <input type="text" name="address"></div>
 	          <div>联系电话 <input type="text" name="phonenum"></div>
 	        <input class="jiezhang" type="submit" onClick="emulatePay()" value="结账">  

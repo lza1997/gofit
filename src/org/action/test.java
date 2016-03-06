@@ -20,22 +20,8 @@ public class test extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Userinfo userinfo=null;
-		UserinfoDAO userinfoDAO = new UserinfoDAO();
-		String Name = request.getParameter("Name");
-		String Value = request.getParameter("Value");
-		System.out.println(Value);
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		userinfo = userinfoDAO.isValidUser(Name, Value);
-		if (userinfo!=null) {
-			out.print("Yes!");
-		}
-		else {
-			out.print("No!");
-		}
-		out.flush();
-		out.close();
+		response.sendRedirect("alipayapi.jsp?" +
+		  		"WIDout_trade_no=1111111&WIDsubject=test&WIDtotal_fee=0.3&WIDbody=test&WIDshow_url=www.baidu.com");
 	}
 
 }

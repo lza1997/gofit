@@ -68,7 +68,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 		}else {
 			foodmap.put(id, foodmap.get(id)+number);
 		} 
-		//�浽session��
+		//锟芥到session锟斤拷
 		sessionMap.put("cart", foodmap);
 		return "add" ;
 	}
@@ -149,13 +149,13 @@ public class CartAction extends ActionSupport implements SessionAware{
 			foodinfo.setSalenum(foodinfo.getSalenum()+order.getProductnum());
 			order.setAddress(address);
 			order.setPhonenum(phonenum);
-			Date date = new Date();//���ϵͳʱ��.
-			String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);//��ʱ���ʽת���ɷ��TimestampҪ��ĸ�ʽ.
-			Timestamp goodsCdate =Timestamp.valueOf(nowTime);//��ʱ��ת��
+			Date date = new Date();//锟斤拷锟较低呈憋拷锟�
+			String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);//锟斤拷时锟斤拷锟绞阶拷锟斤拷煞锟斤拷Timestamp要锟斤拷母锟绞�
+			Timestamp goodsCdate =Timestamp.valueOf(nowTime);//锟斤拷时锟斤拷转锟斤拷
 			order.setOrderdate(goodsCdate);
 			String orderNumber = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 			order.setOrdernum(orderNumber);
-			order.setStatus("����");
+			order.setStatus("锟斤拷锟斤拷");
 			totalmoney=totalmoney+order.getMoney();
 			Session session = HibernateSessionFactory.getSession();
 			Transaction tx = session.beginTransaction();
@@ -166,11 +166,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 			sessionMap.remove("cart");
 			HttpServletRequest request = ServletActionContext.getRequest();
 		    ServletContext servletContext = ServletActionContext.getServletContext();
-		    request.setAttribute("WIDout_trade_no",order.getOrdernum());
-		    request.setAttribute("WIDsubject",order.getFoodinfo().getFoodName());
-		    request.setAttribute("WIDtotal_fee",order.getMoney());
-		    request.setAttribute("WIDbody",order.getFoodinfo().getFoodName());
-		    request.setAttribute("WIDbody","Foodview.action?id="+order.getFoodinfo().getId());
+		  
 		}
 		return "order";
 		
