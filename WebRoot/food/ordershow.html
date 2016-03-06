@@ -229,58 +229,23 @@
 
 
   <h3 id="header">我的订单</h3>
-	<h5 id="head_sub">订单号：<span>32435457657567</span></h5>
 <!-- <hr style="height:1px" /> -->
 
   <table  border="0" align="center"> 
-    <s:iterator id="foodinfos" value="foodinfos">
+<s:form action="Cartneworder">
+     <s:iterator id="haveorderList" value="haveorderList">
     <div class="commodity_wrap">
-     	<div>
-				<img src="images/pic_1.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>3</span></div>
-			    <div class="commodity_name money">343￥</div>
-			    <div>已发货</div>
-			    <div>订单号： <span>55676575455</span></div>
-		</div>
-
-     	<div>
-				<img src="images/pic_2.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
-			    <div class="commodity_name money">45￥</div>
-			    <div>已发货</div>
-			    <div>订单号： <span>55676575455</span></div>
-		</div>
-     	<div>
-				<img src="images/pic_3.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
-			    <div class="commodity_name money">12￥</div>
-			    <div>已发货</div>
-			    <div>订单号： <span>55676575455</span></div>
-		</div>
-     	<div>
-				<img src="images/pic_1.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>2</span></div>
-			    <div class="commodity_name money">36￥</div>
-			    <div>已发货</div>
-			    <div>订单号： <span>55676575455</span></div>
-		</div>
 		<div>
-				<img src="images/pic_1.jpg"/>
-			    <s:property value="foodName" />
-			    <div class="commodity_name"><span>苹果茶</span><span> X </span><span>1</span></div>
-			    <div class="commodity_name money">343￥</div>
-			    <div>已发货</div>
+				<img src="<s:property  value="foodinfo.picture" />"/>
+			    <div class="commodity_name"><span><s:property value="foodName" /></span><span> X </span><span><s:property  value="foodinfo.price" /></span></div>
+			    <div class="commodity_name money"><s:property  value="foodinfo.price" />￥</div>
+			    <div><s:property  value="status" /></div>
 			    <div>订单号： <span>55676575455</span></div>
 		</div>
-
 	</div>
-	</s:iterator>
+	</s:iterator> 
+  </s:form>
   </table>
-
 	<div class="clear"></div>
 <!-- 
 <div class="last_wrap">

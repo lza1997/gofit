@@ -1,11 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>我的订单</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -67,13 +66,23 @@
 			height: 150px;
 			background-color: #fff;
 		}
-		.commodity_wrap>div div:last-child {
+		.commodity_wrap>div div:nth-child(3) {
 			/*cursor: pointer;*/
 			position: absolute;
 		    top: 150px;
 		    left: 190px;
 		    opacity: 0.4;
 		    width: 50px;
+		}
+		.commodity_wrap>div div:last-child {
+			position: absolute;
+			top: 200px;
+			color:rgba(0,0,0,0.4);
+			font-size: .8em;
+			padding-left: 10px;
+			background: #fff;
+			width: 250px;
+			height: 30px;
 		}
 /*		.commodity_wrap>div div:last-child:hover {
 			opacity: 1;
@@ -89,6 +98,7 @@
 		.money {
 			color: rgba(0,0,0,1) !important;
 			padding-left: 10px;
+			padding-bottom: 40px !important;
 			font-size: 0.8em;
 			margin-bottom: 20px;
 			padding-bottom: 14px;
@@ -182,7 +192,7 @@
 			  <s:if test="userinfo!=null">
 					<div align="center" class="text">								    
 							<!--写出user对象的username属性-->
-							<p>user</p><s:property value="userinfo.username"/>
+							<p><s:property value="userinfo.username"/></p>
 							<!--“修改资料”链接-->
 						<ul style="">	
 							<!--“注销”链接-->
@@ -220,22 +230,25 @@
 	</div>
 
 
+  <h3 id="header">我的订单</h3>
 <!-- <hr style="height:1px" /> -->
+
   <table  border="0" align="center"> 
+<s:form action="Cartneworder">
+     <s:iterator id="haveorderList" value="haveorderList">
     <div class="commodity_wrap">
-      	<s:iterator id="haveorderList" value="haveorderList">
 		<div>
-				<img src="<s:property  value="foodinfo.picture" />"/> 
-			    <div class="commodity_name"><span><s:property value="foodName" /></span><span> X </span><span> <s:property  value="productnum" /></span></div>
+				<a href='javascript:foodDetail(<s:property value="foodinfo.id"/>)' class="">
+				<img src="<s:property  value="foodinfo.picture" />"/></a>
+			    <div class="commodity_name"><span><s:property value="foodinfo.foodName" /></span><span> X </span><span><s:property  value="productnum" /></span></div>
 			    <div class="commodity_name money"><s:property  value="money" />￥</div>
 			    <div><s:property  value="status" /></div>
-			    <div>订单号： <span><s:property  value="ordernum" /></span></div>
+			    <div>订单号： <span>55676575455</span></div>
 		</div>
-		</s:iterator>
 	</div>
-
+	</s:iterator> 
+  </s:form>
   </table>
-
 	<div class="clear"></div>
 <!-- 
 <div class="last_wrap">
@@ -257,7 +270,20 @@
   	<div class="bottom">苏ICP备15049153号 无锡恩得乐思科技有限公司</div>
 
 </body>
+<script language="javascript">
 
+	function emulatePay() {
+		alert("fee paid!");
+		submit();
+	}
+	function foodDetail(id) {
+		window.open("Foodview.action?id=" + id);
+	}
+	function cartremove(id) {
+		location.replace("Cartremove.action?id=" + id);
+	}
+
+</script>
 <script src="js/jquery.js"></script>
 <!-- <script src="js/gofit.js"></script> -->
 <script src="js/common.js"></script>
