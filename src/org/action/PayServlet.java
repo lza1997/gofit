@@ -1,6 +1,8 @@
 package org.action;
 
 import java.io.IOException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -35,10 +37,10 @@ import com.alipay.util.UtilDate;
 	+ "&WIDshow_url=www.baidu.com"
 	*/
 public class PayServlet extends HttpServlet {
-	private String WIDout_trade_no;
-	private String WIDsubject;
-	private String WIDtotal_fee;
-	private String WIDbody;
+	private String WIDout_trade_no = null;
+	private String WIDsubject= null;
+	private String WIDtotal_fee= null;
+	private String WIDbody= null;
 	private String WIDshow_url = "www.baidu.com";
 	private List<Order> orders;
 	private HttpSession sessionMap = null ;
@@ -61,30 +63,21 @@ public class PayServlet extends HttpServlet {
 		orders = (List<Order>) sessionMap.getAttribute("order");
 		Iterator<Order> iterator = orders.iterator();
 		double fee =0;
-		StringBuilder subject = null;
 		while (iterator.hasNext()) {
 			Order order = (Order) iterator.next();
 			
 			foodinfo = order.getFoodinfo();
-			fee +=order.getMoney();
-			//subject.append(foodinfo.getFoodName());
-			System.out.println("*****"+order.toString());
+			fee +=order.getProductnum()*foodinfo.getPrice();
+			WIDsubject+=(foodinfo.getFoodName() + "_");
 		}
-		WIDsubject = "test";
 		WIDtotal_fee = String.valueOf(fee);
-		System.out.println("alipayapi.jsp?" +
-		  		"WIDout_trade_no="+WIDout_trade_no+
-		  		"&WIDsubject="+WIDsubject+
-		  		"&WIDtotal_fee="+WIDtotal_fee+
-		  		"&WIDbody="+WIDsubject+
-		  		"&WIDshow_url="+WIDshow_url);
+		WIDsubject = URLEncoder.encode("gofit order", "gb2312");
 		response.sendRedirect("alipayapi.jsp?" +
 		  		"WIDout_trade_no="+WIDout_trade_no+
 		  		"&WIDsubject="+WIDsubject+
 		  		"&WIDtotal_fee="+WIDtotal_fee+
 		  		"&WIDbody="+WIDsubject+
 		  		"&WIDshow_url="+WIDshow_url);
-
 	}
 	
 	
