@@ -7,12 +7,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.HibernateSessionFactory;
 import org.DAO.FoodinfoDAO;
 import org.DAO.OrderDAO;
@@ -25,8 +20,6 @@ import org.been.Userinfo;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.interceptor.AuthenticationInterceptor;
-
-import com.alipay.util.httpClient.HttpRequest;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class CartAction extends ActionSupport implements SessionAware{
@@ -44,13 +37,13 @@ public class CartAction extends ActionSupport implements SessionAware{
 	private String city;
 	private Integer salenum;
 	private Timestamp date;
-	private String orderNumber;
+	private String ordernum;
 	public String getOrderNumber() {
-		return orderNumber;
+		return ordernum;
 	}
 
 	public void setOrderNumber(String orderNumber) {
-		this.orderNumber = orderNumber;
+		this.ordernum = orderNumber;
 	}
 
 	private List<Foodinfo> foodinfos;
@@ -167,9 +160,9 @@ public class CartAction extends ActionSupport implements SessionAware{
 			String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
 			Timestamp goodsCdate =Timestamp.valueOf(nowTime);
 			order.setOrderdate(goodsCdate);
-			orderNumber = (String) httpSession.getAttribute("ordernumber");
-			order.setOrdernum(orderNumber);
-			order.setStatus("已发货");
+			ordernum = (String) httpSession.getAttribute("ordernumber");
+			order.setOrdernum(ordernum);
+			order.setStatus("待发货");
 			totalmoney=totalmoney+order.getMoney();
 			Session session = HibernateSessionFactory.getSession();
 			Transaction tx = session.beginTransaction();

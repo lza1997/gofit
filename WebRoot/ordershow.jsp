@@ -243,7 +243,7 @@
 			    <div class="commodity_name"><span><s:property value="foodinfo.foodName" /></span><span> X </span><span><s:property  value="productnum" /></span></div>
 			    <div class="commodity_name money"><s:property  value="money" />￥</div>
 			    <div><s:property  value="status" /></div>
-			    <div>订单号： <span><s:property  value="odernum" /></span></div>
+			    <div>订单号： <span><s:property  value="ordernum" /></span></div>
 		</div>
 	</div>
 	</s:iterator> 
