@@ -44,6 +44,15 @@ public class CartAction extends ActionSupport implements SessionAware{
 	private String city;
 	private Integer salenum;
 	private Timestamp date;
+	private String orderNumber;
+	public String getOrderNumber() {
+		return orderNumber;
+	}
+
+	public void setOrderNumber(String orderNumber) {
+		this.orderNumber = orderNumber;
+	}
+
 	private List<Foodinfo> foodinfos;
 	private Foodinfo foodinfo;
 	private double totalmoney=0.0;
@@ -154,13 +163,13 @@ public class CartAction extends ActionSupport implements SessionAware{
 			System.out.println(address);
 			order.setAddress(address);
 			order.setPhonenum(phonenum);
-			Date date = new Date();//锟斤拷锟较低呈憋拷锟�
-			String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);//锟斤拷时锟斤拷锟绞阶拷锟斤拷煞锟斤拷Timestamp要锟斤拷母锟绞�
-			Timestamp goodsCdate =Timestamp.valueOf(nowTime);//锟斤拷时锟斤拷转锟斤拷
+			Date date = new Date();
+			String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
+			Timestamp goodsCdate =Timestamp.valueOf(nowTime);
 			order.setOrderdate(goodsCdate);
-			String orderNumber = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+			orderNumber = (String) httpSession.getAttribute("ordernumber");
 			order.setOrdernum(orderNumber);
-			order.setStatus("锟斤拷锟斤拷");
+			order.setStatus("已发货");
 			totalmoney=totalmoney+order.getMoney();
 			Session session = HibernateSessionFactory.getSession();
 			Transaction tx = session.beginTransaction();

@@ -58,8 +58,8 @@ public class PayServlet extends HttpServlet {
 		sessionMap = request.getSession();
 		sessionMap.setAttribute("address", request.getParameter("address"));	
 		sessionMap.setAttribute("phonenum", request.getParameter("phonenum"));
-
 		WIDout_trade_no = UtilDate.getOrderNum() ;
+		sessionMap.setAttribute("ordernumber", WIDout_trade_no);
 		orders = (List<Order>) sessionMap.getAttribute("order");
 		Iterator<Order> iterator = orders.iterator();
 		double fee =0;
