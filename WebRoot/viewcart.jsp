@@ -276,7 +276,7 @@
 	  	<form action="pay.servlet">
 	         <div>收货地址 <input type="text" name="address"></div>
 	          <div>联系电话 <input type="text" name="phonenum"></div>
-	        <input class="jiezhang" type="submit" onClick="emulatePay()" value="结账">  
+	        <input class="jiezhang" type="submit"  value="结账">  
 	    </form>
   	</div>
 

@@ -11,6 +11,7 @@ import java.util.Map;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.HibernateSessionFactory;
 import org.DAO.FoodinfoDAO;
@@ -147,6 +148,10 @@ public class CartAction extends ActionSupport implements SessionAware{
 			Order order = (Order) iterator.next();
 			foodinfo = order.getFoodinfo();
 			foodinfo.setSalenum(foodinfo.getSalenum()+order.getProductnum());
+			HttpSession httpSession = ServletActionContext.getRequest().getSession();
+			String address = (String) httpSession.getAttribute("address");
+			String phonenum = (String) httpSession.getAttribute("phonenum");
+			System.out.println(address);
 			order.setAddress(address);
 			order.setPhonenum(phonenum);
 			Date date = new Date();//锟斤拷锟较低呈憋拷锟�
@@ -164,12 +169,9 @@ public class CartAction extends ActionSupport implements SessionAware{
 			tx.commit();
 			session.close();
 			sessionMap.remove("cart");
-			HttpServletRequest request = ServletActionContext.getRequest();
-		    ServletContext servletContext = ServletActionContext.getServletContext();
 		  
 		}
 		return "order";
-		
 	}
 	
 	public List<Order> getHaveorderList() {
