@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 	<div id="nav">
-		<span> | 中国健康食品互联网第一品牌</span>
+		<span> | 轻体餐互联网第一品牌</span>
 		<div id="children_page">
 			<a href="GetFoodList.action" >首页</a>
 			<a href="children_pages/lowfood.html" >减脂健康餐</a>
@@ -113,7 +113,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div id="search_button"><img src="images/search.png" alt=""></div>
 				<div id="input_hint">Sorry, the database is in maintenance.</div>
 			</div>
-			<span id="intro_3">苏ICP备15049153号  无锡恩得乐思科技有限公司</span>
+			<span id="intro_3"><a href="http://www.miitbeian.gov.cn">苏ICP备15049153号</a> 无锡恩得乐思科技有限公司</span>
 		</div>
 	</div>
 	

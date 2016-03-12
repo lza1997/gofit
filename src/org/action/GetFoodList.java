@@ -24,9 +24,9 @@ public class GetFoodList extends ActionSupport implements SessionAware{
 		userinfo = (Userinfo) sessionMap.get(AuthenticationInterceptor.USER_SESSION_KEY);
 		FoodinfoDAO foodinfoDAO = new FoodinfoDAO();
 		Session session = HibernateSessionFactory.getSession();
-		Transaction tx = session.beginTransaction();
+//		Transaction tx = session.beginTransaction();
 		foodinfos = foodinfoDAO.findAll();
-		tx.commit();
+//		tx.commit();
 		session.close();
 		return SUCCESS ;
 	}

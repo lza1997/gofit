@@ -56,6 +56,10 @@ public class CartAction extends ActionSupport implements SessionAware{
 	OrderDAO orderDAO = new OrderDAO();
 	
 	public String add() throws Exception {
+		userinfo = (Userinfo) sessionMap.get(AuthenticationInterceptor.USER_SESSION_KEY);
+		if (userinfo==null) {
+			return "nouser" ;
+		}
 		Integer number = Integer.parseInt(buynumber);
 		Session session = HibernateSessionFactory.getSession();
 		Transaction tx = session.beginTransaction();
@@ -135,10 +139,10 @@ public class CartAction extends ActionSupport implements SessionAware{
 	public String ordershow() throws Exception{
 		userinfo = (Userinfo) sessionMap.get(AuthenticationInterceptor.USER_SESSION_KEY);
 		Session session = HibernateSessionFactory.getSession();
-		Transaction tx = session.beginTransaction();
+//		Transaction tx = session.beginTransaction();
 		haveorderList =  session.createQuery("from Order where userid = '"+userinfo.getId()+"'")
 	               .list();
-		tx.commit();
+//		tx.commit();
 		session.close();
 		return "ordershow";
 	}

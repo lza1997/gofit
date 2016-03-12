@@ -9,7 +9,7 @@
 <script language="javascript">
 <!--
 	alert('已添加到购物车');
-	location.replace("/gofit/GetFoodList");
+	location.replace("/GetFoodList");
 -->
 </script>
 </head>

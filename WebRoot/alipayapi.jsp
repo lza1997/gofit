@@ -37,7 +37,7 @@
 		String notify_url = "http://商户网关地址/create_direct_pay_by_user-JAVA-UTF-8/notify_url.jsp";
 		//需http://格式的完整路径，不能加?id=123这类自定义参数
 		//页面跳转同步通知页面路径
-		String return_url = "http://127.0.0.1:8080/gofit/return_url.jsp";
+		String return_url = "http://www.makeeveryonefit.com/return_url.jsp";
 		//需http://格式的完整路径，不能加?id=123这类自定义参数，不能写成http://localhost/
 		//商户订单号
 		String out_trade_no = new String(request.getParameter("WIDout_trade_no").getBytes("ISO-8859-1"),"UTF-8");

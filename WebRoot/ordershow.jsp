@@ -267,7 +267,7 @@
 </div> -->
 
 
-  	<div class="bottom">苏ICP备15049153号 无锡恩得乐思科技有限公司</div>
+  	<div class="bottom"><a href="http://www.miitbeian.gov.cn">苏ICP备15049153号</a> 无锡恩得乐思科技有限公司</div>
 
 </body>
 <script language="javascript">

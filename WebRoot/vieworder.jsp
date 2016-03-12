@@ -158,7 +158,7 @@
 </head>
 <body>
 	<div id="nav">
-		<span> | 中国健康食品互联网第一品牌</span>
+		<span> | 轻体餐互联网第一品牌</span>
 		<div id="children_page">
 			<a href="GetFoodList" >首页</a>
 			<a href="children_pages/lowfood.html" >减脂健康餐</a>
@@ -283,7 +283,7 @@
 	         <div>收货地址 :<s:property  value="address" /></div>
 	          <div>联系电话:<s:property  value="phonenum" /></div>
   	</div>
-  	<div class="bottom">苏ICP备15049153号 无锡恩得乐思科技有限公司</div>
+  	<div class="bottom"><a href="http://www.miitbeian.gov.cn">苏ICP备15049153号</a> 无锡恩得乐思科技有限公司</div>
 </div>
 
 </body>
