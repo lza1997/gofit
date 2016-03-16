@@ -106,7 +106,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 
-		<div id="intro">
+	<span id="intro_3" style="z-index: 100000;">苏ICP备15049153号  无锡恩得乐思科技有限公司</span>
+
+<!-- 		<div id="intro">
 			<div>
 				<p id="intro_1"></p>
 				<span  id="intro_2" style="display:none;">Search For Your Need</span>
@@ -114,14 +116,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div id="search_button"><img src="images/search.png" alt=""></div>
 				<div id="input_hint">Sorry, the database is in maintenance.</div>
 			</div>
-			<span id="intro_3"><a href="http://www.miitbeian.gov.cn">苏ICP备15049153号</a> 无锡恩得乐思科技有限公司</span>
-		</div>
+
+		</div> -->
 	</div>
 	
-	<div id="point">
+<!-- 	<div id="point">
 		<div id="point_1" class="clicked" type="radio"></div>
 		<div id="point_2" type="radio"></div>
-	</div>
+	</div> -->
 
 </body>
 <script src="js/jquery.js"></script>
