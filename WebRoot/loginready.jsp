@@ -16,8 +16,5 @@ setTimeout("qqtc()",1000) ;
 </script>
 </head>
 <body>
-<center>
-µÇÂ½³É¹¦£¡
-</center>
 </body>
 </html>
