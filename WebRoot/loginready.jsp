@@ -9,7 +9,7 @@
 <script language="javascript">
 <!--
 	function  qqtc(){ 
-window.location.href='GetFoodList'; 
+window.location.href='GetFoodListall'; 
 } 
 setTimeout("qqtc()",0) ;
 -->

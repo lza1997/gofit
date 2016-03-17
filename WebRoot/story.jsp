@@ -84,6 +84,28 @@
 			margin-bottom: 20px;
 			padding-bottom: 14px;
 		}
+			#content {
+			margin: 0 auto;
+			margin-top: 300px;
+			display: block;
+			width: 50%;
+		}
+		#story:before {
+			content:"";
+			float: left;
+			display: block;
+			width: 5px;
+			height: 20px;
+			background-color: #eab000;
+		}
+		#story {
+			padding-left: 6px;
+			line-height: 18px;
+			height: 32px;
+		}
+		p {
+			letter-spacing: 1px;
+		}
 	</style>
 </head>
 
@@ -186,26 +208,17 @@
 		</div>
 	</div>
  -->
-  <h3 id="header">商品列表</h3>
-	<h5 id="head_sub">fhghgfhgnfnhdnhgngncvbcgf</h5>
-<!-- <hr style="height:1px" /> -->
+  <div id="content">
+		<p id="story" style="font-weight:800;"> &nbsp&nbsp品牌故事</p>
+<p>关于我们：Gofit创立的初衷，是为了解决广大运动员和健身爱好者对营养和健康饮食的需求，自上线以来，引领了都市健康生活，深受健身爱好者以及广大白领的喜爱，我们会一直做下去，为大家提供最健康的生活方式，这是一场关于健康生活的创新，加入我们吧！一起GoFit!</p>
 
-  <table  border="0" align="center"> 
-    <s:iterator id="foodinfos" value="foodinfos">
-    <div class="commodity_wrap">
-     	<div>
-     		<a href='javascript:foodDetail(<s:property value="id"/>)' class="">
-				<img src="<s:property  value="picture" />"/>
-			    <div class="commodity_name"><s:property value="foodName" /></div>
-			    <div class="commodity_name money"><s:property value="price" /></div>
-		    </a>
-		</div>
-    </div>
-	</s:iterator>
-  </table>
-
-
-
+<p>我们深信：健康的生活方式是我们的信仰，Go Fit 的理念是让所有人去enjoy运动与健康食物带来的活力与能量！只有改善自己的生活方式，才能好好的享受生活，给爱的人一丝惊喜，获得美满幸福的人生！</p>
+<p style="opacity:0.8;">联系我们：<br>
+地址：无锡市滨湖区金融一街十号楼1206<br>
+电话：0510-68069587<br>
+合作：contact@letsfit.cn<br>
+招聘：hr@letsfit.cn</p>
+	</div>
 </body>
 
 <script src="js/jquery.js"></script>

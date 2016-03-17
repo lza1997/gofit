@@ -11,7 +11,7 @@
 	function  qqtc(){ 
 window.location.href='Cartordershow.action'; 
 } 
-setTimeout("qqtc()",1000) ;
+setTimeout("qqtc()",0) ;
 -->
 </script>
 </head>

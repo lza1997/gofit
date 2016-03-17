@@ -186,26 +186,6 @@
 		</div>
 	</div>
  -->
-  <h3 id="header">商品列表</h3>
-	<h5 id="head_sub">fhghgfhgnfnhdnhgngncvbcgf</h5>
-<!-- <hr style="height:1px" /> -->
-
-  <table  border="0" align="center"> 
-    <s:iterator id="foodinfos" value="foodinfos">
-    <div class="commodity_wrap">
-     	<div>
-     		<a href='javascript:foodDetail(<s:property value="id"/>)' class="">
-				<img src="<s:property  value="picture" />"/>
-			    <div class="commodity_name"><s:property value="foodName" /></div>
-			    <div class="commodity_name money"><s:property value="price" /></div>
-		    </a>
-		</div>
-    </div>
-	</s:iterator>
-  </table>
-
-
-
 </body>
 
 <script src="js/jquery.js"></script>

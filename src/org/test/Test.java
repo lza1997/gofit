@@ -74,17 +74,17 @@ public class Test {
 		return userinfo;
 	}
 	
-	public static Order getLastOrder(Userinfo userinfo) {
+	public static  Order getLastOrder(Userinfo userinfo) {
 		Session session1 = HibernateSessionFactory.getSession();
-		Transaction tx = session1.beginTransaction();
-		Set<Order> orders = userinfo.getOrders();
+		Set<Order> orders = null;
+		orders = userinfo.getOrders();
 		Iterator<Order> iterator = orders.iterator();
 		Order order = null;
 		while (iterator.hasNext()) {
 			order = (Order) iterator.next();
 			break;
 		}
-		tx.commit();
+		session1.clear();
 		session1.close();
 		return order;
 	}
@@ -94,5 +94,9 @@ public class Test {
 		Userinfo userinfo = userinfoDAO.findById(54);
 		Order order = getLastOrder(userinfo);
 		System.out.println(order.getAddress());
+		Order order1 = getLastOrder(userinfo);
+		System.out.println(order1.getAddress());
+		Order order2 = getLastOrder(userinfo);
+		System.out.println(order2.getAddress());
 	}
 }

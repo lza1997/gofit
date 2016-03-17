@@ -9,7 +9,7 @@
 <script language="javascript">
 <!--
 	alert('已添加到购物车');
-	window.location.href='GetFoodList'; 
+	window.location.href='GetFoodListall'; 
 -->
 </script>
 </head>

@@ -107,7 +107,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 		if (foodmap==null) {
 			return "enpty" ;
 		}
-		Order lastOrder = Test.getLastOrder(userinfo);
+		Order lastOrder = new Test().getLastOrder(userinfo);
 		lastAddress  = lastOrder.getAddress();
 		lastPhoneNumber = lastOrder.getPhonenum();
 		System.out.println(lastAddress);

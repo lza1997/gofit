@@ -23,11 +23,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="nav">
 		<span> | 轻体餐互联网第一品牌</span>
 		<div id="children_page">
-			<a href="GetFoodList.action" >首页</a>
-			<a href="children_pages/lowfood.html" >减脂健康餐</a>
-			<a href="children_pages/fruit.html" >营养果蔬汁</a>
-			<a href="children_pages/activity.html" >最新活动</a>
-			<a href="children_pages/story.html" >品牌故事</a>
+			<a href="GetFoodListall" >首页</a>
+			<a href="GetFoodListlowfood" >减脂健康餐</a>
+			<a href="GetFoodListfruit" >营养果蔬汁</a>
+			<a href="GetFoodListactivity" >最新活动</a>
+			<a href="GetFoodListstory" >品牌故事</a>
 		</div>
 		<a id="download_button" href="#">
 			DOWNLOAD APP

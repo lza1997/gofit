@@ -19,8 +19,8 @@ public class GetFoodList extends ActionSupport implements SessionAware{
 	private Userinfo userinfo;
 	private Map sessionMap;
 
-	@Override
-	public String execute() throws Exception {
+
+	public String all() throws Exception {
 		userinfo = (Userinfo) sessionMap.get(AuthenticationInterceptor.USER_SESSION_KEY);
 		FoodinfoDAO foodinfoDAO = new FoodinfoDAO();
 		Session session = HibernateSessionFactory.getSession();
@@ -28,7 +28,51 @@ public class GetFoodList extends ActionSupport implements SessionAware{
 		foodinfos = foodinfoDAO.findAll();
 //		tx.commit();
 //		session.close();
-		return SUCCESS ;
+		return "all" ;
+	}
+	
+	public String lowfood() throws Exception {
+		userinfo = (Userinfo) sessionMap.get(AuthenticationInterceptor.USER_SESSION_KEY);
+		FoodinfoDAO foodinfoDAO = new FoodinfoDAO();
+		Session session = HibernateSessionFactory.getSession();
+//		Transaction tx = session.beginTransaction();
+		foodinfos = foodinfoDAO.findAll();
+//		tx.commit();
+//		session.close();
+		return "lowfood" ;
+	}
+	
+	public String fruit() throws Exception {
+		userinfo = (Userinfo) sessionMap.get(AuthenticationInterceptor.USER_SESSION_KEY);
+		FoodinfoDAO foodinfoDAO = new FoodinfoDAO();
+		Session session = HibernateSessionFactory.getSession();
+//		Transaction tx = session.beginTransaction();
+		foodinfos = foodinfoDAO.findAll();
+//		tx.commit();
+//		session.close();
+		return "fruit" ;
+	}
+	
+	public String activity() throws Exception {
+		userinfo = (Userinfo) sessionMap.get(AuthenticationInterceptor.USER_SESSION_KEY);
+		FoodinfoDAO foodinfoDAO = new FoodinfoDAO();
+		Session session = HibernateSessionFactory.getSession();
+//		Transaction tx = session.beginTransaction();
+		foodinfos = foodinfoDAO.findAll();
+//		tx.commit();
+//		session.close();
+		return "activity" ;
+	}
+	
+	public String story() throws Exception {
+		userinfo = (Userinfo) sessionMap.get(AuthenticationInterceptor.USER_SESSION_KEY);
+		FoodinfoDAO foodinfoDAO = new FoodinfoDAO();
+		Session session = HibernateSessionFactory.getSession();
+//		Transaction tx = session.beginTransaction();
+		foodinfos = foodinfoDAO.findAll();
+//		tx.commit();
+//		session.close();
+		return "story" ;
 	}
 
 	public Userinfo getUserinfo() {

@@ -20,8 +20,12 @@
             <result name="input">/login.jsp</result>
         </action>
         
-       <action name="GetFoodList"  class="org.action.GetFoodList">
-				<result name="success">/welcome.jsp</result>
+       <action name="GetFoodList*"  class="org.action.GetFoodList" method="{1}">
+				<result name="all">/welcome.jsp</result>
+				<result name="lowfood">/lowfood.jsp</result>
+				<result name="fruit">/fruit.jsp</result>
+				<result name="activity">/activity.jsp</result>
+				<result name="story">/story.jsp</result>
 	   </action>
 	   
 	    <action name="Foodview"  class="org.action.Foodview">
