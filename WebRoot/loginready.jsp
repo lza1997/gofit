@@ -11,7 +11,7 @@
 	function  qqtc(){ 
 window.location.href='GetFoodList'; 
 } 
-setTimeout("qqtc()",1000) ;
+setTimeout("qqtc()",100) ;
 -->
 </script>
 </head>
