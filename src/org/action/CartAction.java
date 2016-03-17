@@ -62,9 +62,9 @@ public class CartAction extends ActionSupport implements SessionAware{
 		}
 		Integer number = Integer.parseInt(buynumber);
 		Session session = HibernateSessionFactory.getSession();
-		Transaction tx = session.beginTransaction();
+	//	Transaction tx = session.beginTransaction();
 		foodinfo = foodinfoDAO.findById(id);
-		tx.commit();
+	
 		session.close();
 		foodmap = (Map)sessionMap.get("cart");
 		if (foodmap==null) {
@@ -89,9 +89,9 @@ public class CartAction extends ActionSupport implements SessionAware{
 		orders = new ArrayList<Order>();
 		for (Map.Entry<Integer, Integer> entry : foodmap.entrySet()) {  
 			Session session = HibernateSessionFactory.getSession();
-			Transaction tx = session.beginTransaction();
+//			Transaction tx = session.beginTransaction();
 			foodinfo = foodinfoDAO.findById(entry.getKey());
-			tx.commit();
+//			tx.commit();
 			session.close();
 			Order order1 = new Order();
 			order1.setAddress(userinfo.getAddress());

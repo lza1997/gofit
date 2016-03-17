@@ -31,9 +31,9 @@ public class Foodview extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		Session session = HibernateSessionFactory.getSession();
-		Transaction tx = session.beginTransaction();
+//		Transaction tx = session.beginTransaction();
 		foodinfo = foodinfoDAO.findById(id);
-		tx.commit();
+//		tx.commit();
 		session.close();
 		return "view";
 	}

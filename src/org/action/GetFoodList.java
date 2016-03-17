@@ -27,7 +27,7 @@ public class GetFoodList extends ActionSupport implements SessionAware{
 //		Transaction tx = session.beginTransaction();
 		foodinfos = foodinfoDAO.findAll();
 //		tx.commit();
-		session.close();
+//		session.close();
 		return SUCCESS ;
 	}
 
