@@ -105,8 +105,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div id="back_3"></div>
 			</div>
 		</div>
-
-	<span id="intro_3" style="z-index: 100000;">苏ICP备15049153号  无锡恩得乐思科技有限公司</span>
+	<a href="http://www.miitbeian.gov.cn">
+		<span id="intro_3" style="z-index: 100000;">苏ICP备15049153号  无锡恩得乐思科技有限公司</span>
+	</a>
 
 <!-- 		<div id="intro">
 			<div>
