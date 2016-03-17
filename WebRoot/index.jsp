@@ -18,6 +18,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    overflow: hidden;
 			    position: relative;
 			}
+		.bottom {
+			font-size: 0.8em;
+			text-align: center;
+			opacity: 0.5;
+		    margin-top: 60px !important;
+		}
 	</style>
 </head>
 <body>
@@ -106,7 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 
-	<span id="intro_3" style="z-index: 100000;">苏ICP备15049153号  无锡恩得乐思科技有限公司</span>
+	<div class="bottom"><a href="http://www.miitbeian.gov.cn">苏ICP备15049153号</a> 无锡恩得乐思科技有限公司</div>
 
 <!-- 		<div id="intro">
 			<div>

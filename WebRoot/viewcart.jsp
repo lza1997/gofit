@@ -274,8 +274,8 @@
   	</div>
   	<div class="last_info">
 	  	<form action="pay.servlet">
-	         <div>收货地址 <input type="text" name="address"></div>
-	          <div>联系电话 <input type="text" name="phonenum"></div>
+	         <div>收货地址 <input type="text" name="address" value=<s:property  value="lastAddress" />></div>
+	          <div>联系电话 <input type="text" name="phonenum" value=<s:property  value="lastPhoneNumber" />></div>
 	        <input class="jiezhang" type="submit"  value="结账">  
 	    </form>
   	</div>

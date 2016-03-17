@@ -9,12 +9,14 @@
 <script language="javascript">
 <!--
 	function  qqtc(){ 
-window.location.href='GetFoodList'; 
+window.location.href='Cartview.action'; 
 } 
 setTimeout("qqtc()",0) ;
 -->
 </script>
 </head>
 <body>
+<center>
+</center>
 </body>
 </html>

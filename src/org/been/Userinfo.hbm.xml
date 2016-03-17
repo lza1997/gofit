@@ -28,7 +28,7 @@
         <property name="level" type="java.lang.String">
             <column name="level" length="7" />
         </property>
-        <set name="orders" inverse="true">
+        <set name="orders" inverse="true" lazy="false">
             <key>
                 <column name="userid" not-null="true" />
             </key>

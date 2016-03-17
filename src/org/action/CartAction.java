@@ -20,6 +20,9 @@ import org.been.Userinfo;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.interceptor.AuthenticationInterceptor;
+import org.jaxen.function.LastFunction;
+import org.test.Test;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 public class CartAction extends ActionSupport implements SessionAware{
@@ -38,6 +41,24 @@ public class CartAction extends ActionSupport implements SessionAware{
 	private Integer salenum;
 	private Timestamp date;
 	private String ordernum;
+	private String lastAddress;
+	private String lastPhoneNumber;
+	public String getLastPhoneNumber() {
+		return lastPhoneNumber;
+	}
+
+	public void setLastPhoneNumber(String lastPhoneNumber) {
+		this.lastPhoneNumber = lastPhoneNumber;
+	}
+
+	public String getLastAddress() {
+		return lastAddress;
+	}
+
+	public void setLastAddress(String lastAddress) {
+		this.lastAddress = lastAddress;
+	}
+
 	public String getOrderNumber() {
 		return ordernum;
 	}
@@ -86,6 +107,11 @@ public class CartAction extends ActionSupport implements SessionAware{
 		if (foodmap==null) {
 			return "enpty" ;
 		}
+		Order lastOrder = Test.getLastOrder(userinfo);
+		lastAddress  = lastOrder.getAddress();
+		lastPhoneNumber = lastOrder.getPhonenum();
+		System.out.println(lastAddress);
+		System.out.println(lastPhoneNumber);
 		orders = new ArrayList<Order>();
 		for (Map.Entry<Integer, Integer> entry : foodmap.entrySet()) {  
 			Session session = HibernateSessionFactory.getSession();

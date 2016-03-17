@@ -33,7 +33,7 @@
 				 <result name="nouser">/login.jsp</result>
 				 <result name="view">/viewcart.jsp</result>
 				 <result name="order">/ordershowready.jsp</result>
-				 <result name="remove">/viewcart.jsp</result>
+				 <result name="remove">/cartviewready.jsp</result>
 				 <result name="enpty">/enptycart.jsp</result>
 				 <result name="ordershow">/ordershow.jsp</result>
 	   </action>

@@ -1,9 +1,16 @@
 package org.action;
 
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
+
+import org.HibernateSessionFactory;
 import org.DAO.UserinfoDAO;
 import org.apache.struts2.interceptor.SessionAware;
+import org.been.Order;
 import org.been.Userinfo;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.interceptor.AuthenticationInterceptor;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -22,10 +29,10 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		System.out.println(pwd);
 		userinfo = userinfoDAO.isValidUser(username, pwd);
 		if(userinfo!=null){
-				session.put(AuthenticationInterceptor.USER_SESSION_KEY, userinfo);
+			session.put(AuthenticationInterceptor.USER_SESSION_KEY, userinfo);
             return SUCCESS;
         }else{
-            addActionError("µÇÂ½Ê§°Ü");
+            addActionError("ï¿½ï¿½Â½Ê§ï¿½ï¿½");
             return INPUT ;
         }
         }

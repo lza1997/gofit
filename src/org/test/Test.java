@@ -3,9 +3,12 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+
 import org.HibernateSessionFactory;
 import org.DAO.FoodinfoDAO;
 import org.DAO.FoodtypeDAO;
+import org.DAO.OrderDAO;
 import org.DAO.UserinfoDAO;
 import org.been.Foodinfo;
 import org.been.Foodtype;
@@ -24,13 +27,13 @@ public class Test {
 		FoodtypeDAO ftd = new FoodtypeDAO();
 		Foodtype ft = new Foodtype();
 		ft.setId(1);
-		ft.setTypename("À¬»øÊ³Æ·");
+		ft.setTypename("ï¿½ï¿½ï¿½ï¿½Ê³Æ·");
 		ftd.save(ft);
 	}
 	private static void deleteType() {
 		FoodtypeDAO ftd = new FoodtypeDAO();
 		
-		List fts = ftd.findByTypename("À¬»øÊ³Æ·");
+		List fts = ftd.findByTypename("ï¿½ï¿½ï¿½ï¿½Ê³Æ·");
 		Foodtype ft = null;
 		Iterator<Foodtype> it = fts.iterator();
 		while(it.hasNext()){
@@ -53,11 +56,11 @@ public class Test {
 		FoodinfoDAO  fd = new FoodinfoDAO();
 		Foodinfo f = new Foodinfo();
 		f.setId(4);
-		f.setFoodName("Õ¨½´Ãæ");
+		f.setFoodName("Õ¨ï¿½ï¿½ï¿½ï¿½");
 		f.setFoodtype(new FoodtypeDAO().findById(4));
-		f.setIntro("ÀÏ±±¾©ÃæÌõ");
+		f.setIntro("ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		f.setPrice(6.5);
-		f.setCity("±±¾©");
+		f.setCity("ï¿½ï¿½ï¿½ï¿½");
 		//f.setDate();
 	}
 	
@@ -70,13 +73,26 @@ public class Test {
 		session.close();
 		return userinfo;
 	}
-	public static void main(String[] args) {
-		Session session = HibernateSessionFactory.getSession();
-		Transaction tx = session.beginTransaction();
-		FoodinfoDAO foodinfoDAO = new FoodinfoDAO();
-		Foodinfo foodinfo = foodinfoDAO.findById(5);
-		foodinfoDAO.delete(foodinfo);
+	
+	public static Order getLastOrder(Userinfo userinfo) {
+		Session session1 = HibernateSessionFactory.getSession();
+		Transaction tx = session1.beginTransaction();
+		Set<Order> orders = userinfo.getOrders();
+		Iterator<Order> iterator = orders.iterator();
+		Order order = null;
+		while (iterator.hasNext()) {
+			order = (Order) iterator.next();
+			break;
+		}
 		tx.commit();
-		session.close();
+		session1.close();
+		return order;
+	}
+	
+	public static void main(String[] args) {
+		UserinfoDAO userinfoDAO = new UserinfoDAO();
+		Userinfo userinfo = userinfoDAO.findById(54);
+		Order order = getLastOrder(userinfo);
+		System.out.println(order.getAddress());
 	}
 }
