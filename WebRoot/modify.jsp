@@ -6,6 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>用户资料修改</title>
+	<link rel="shortcut icon" href="images/logo-ico.ico">
 	<link rel="stylesheet" href="css/nav.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main_page_style.css">
