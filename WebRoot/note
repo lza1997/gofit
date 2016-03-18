@@ -1,11 +1,2 @@
- 		<!-- ¶¨ÒåÒ»¸öÀ¹½ØÆ÷ -->  
-        <interceptors>  
-            <interceptor name="authority"  
-                class="org.interceptor.AuthenticationInterceptor">  
-            </interceptor>  
-            <!-- À¹½ØÆ÷Õ» -->  
-            <interceptor-stack name="mydefault">  
-                <interceptor-ref name="defaultStack" />  
-                <interceptor-ref name="authority" />  
-            </interceptor-stack>  
-        </interceptors> 
+æž«å·²é€è½æƒ…
+FMK1124

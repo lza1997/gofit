@@ -100,6 +100,7 @@
 		<a id="download_button" href="#">
 			DOWNLOAD APP
 		</a>
+		<!--  
 		<div id="city_wrap">		
 			<a href="#" id="city">北京
 				<span></span>
@@ -111,6 +112,7 @@
 				<li>广州</li>
 			</ul>
 		</div>
+		-->
 		<div id="user_log">
 			  <s:if test="userinfo!=null">
 					<div align="center" class="text">								    

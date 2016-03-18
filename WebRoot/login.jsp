@@ -32,17 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<a id="download_button" href="#">
 			DOWNLOAD APP
 		</a>
-		<div id="city_wrap">		
-			<a href="#" id="city">北京
-				<span></span>
-			</a>
-			<ul id="city_change">
-				<li>上海</li>
-				<li>无锡</li>
-				<li>深圳</li>
-				<li>广州</li>
-			</ul>
-		</div>
+		
 		<div id="user_log">
 			<p href="#" class="user_loggin" id="log_in">登录</p>
 			<p href="#" class="user_loggin" id="register">注册</p>

@@ -196,7 +196,8 @@ public class CartAction extends ActionSupport implements SessionAware{
 			totalmoney=totalmoney+order.getMoney();
 			Session session = HibernateSessionFactory.getSession();
 			Transaction tx = session.beginTransaction();
-			session.update(foodinfo);
+			session.refresh(foodinfo);
+//			session.update(foodinfo);
 			orderDAO.save(order);
 			tx.commit();
 			session.close();

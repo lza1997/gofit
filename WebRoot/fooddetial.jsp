@@ -144,17 +144,7 @@
 		<a id="download_button" href="#">
 			DOWNLOAD APP
 		</a>
-		<div id="city_wrap">		
-			<a href="#" id="city">北京
-				<span></span>
-			</a>
-			<ul id="city_change">
-				<li>上海</li>
-				<li>无锡</li>
-				<li>深圳</li>
-				<li>广州</li>
-			</ul>
-		</div>
+		
 		<div id="user_log">
 			  <s:if test="userinfo!=null">
 					<div align="center" class="text">								    

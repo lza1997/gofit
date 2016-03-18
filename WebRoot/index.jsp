@@ -39,17 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<a id="download_button" href="#">
 			DOWNLOAD APP
 		</a>
-		<div id="city_wrap">		
-			<a href="#" id="city">北京
-				<span></span>
-			</a>
-			<ul id="city_change">
-				<li>上海</li>
-				<li>无锡</li>
-				<li>深圳</li>
-				<li>广州</li>
-			</ul>
-		</div>
+		
 		<div id="user_log">
 			<p href="#" class="user_loggin" id="log_in">登录</p>
 			<p href="#" class="user_loggin" id="register">注册</p>
@@ -112,8 +102,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 
-	<div class="bottom"><a href="http://www.miitbeian.gov.cn">苏ICP备15049153号</a> 无锡恩得乐思科技有限公司</div>
-
+	<a href="http://www.miitbeian.gov.cn">
+ 		<span id="intro_3" style="z-index: 100000;">苏ICP备15049153号  无锡恩得乐思科技有限公司</span>
+ 	</a>
 <!-- 		<div id="intro">
 			<div>
 				<p id="intro_1"></p>
