@@ -10,6 +10,7 @@
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	<link rel="shortcut icon" href="images/logo-ico.ico">
 	<link rel="stylesheet" href="css/nav.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main_page_style.css">
@@ -56,7 +57,7 @@
 			position: relative;
 			/*text-align: center;*/
 		    float: left;
-	        margin: 0 25px;
+	        margin: 30px 25px;
 		    display: inline-block;
 		}
 		.commodity_wrap>div img {
@@ -162,6 +163,10 @@
 			opacity: 0.5;
 		    margin-top: 150px !important;
 		}
+		.order_status {
+			background: #fff;
+			padding-left: 10px;
+		}
 	</style>
 </head>
 <body>
@@ -242,7 +247,7 @@
 				<img src="<s:property  value="foodinfo.picture" />"/></a>
 			    <div class="commodity_name"><span><s:property value="foodinfo.foodName" /></span><span> X </span><span><s:property  value="productnum" /></span></div>
 			    <div class="commodity_name money"><s:property  value="money" />￥</div>
-			    <div><s:property  value="status" /></div>
+			    <div class="order_status"><s:property  value="status" /></div>
 			    <div>订单号： <span><s:property  value="ordernum" /></span></div>
 		</div>
 	</div>

@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>GOFit Food</title>
+	<link rel="shortcut icon" href="images/logo-ico.ico">
 	<link rel="stylesheet" href="css/nav.css">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main_page_style.css">
@@ -104,6 +105,30 @@
 			padding-left: 20px;
 			padding-top: 20px;
 		}
+		.add_reduce {
+			width: 15px;
+			height: 38px;
+			cursor: pointer;
+			position: initial !important;
+		    margin-left: 84px;
+		    margin-right: 1px;
+		    margin-top: -59px;
+		    background-image: url("images/add_reduce.png");
+		}
+		.add {
+			width: 15px;
+			height: 19px;
+			position: absolute;
+			left: 84px !important;
+			top: 21px;
+		}
+		.reduce {
+			width: 15px;
+			height: 19px;
+			position: absolute;
+			left: 84px !important;
+			bottom: 0;
+		}
 	</style>
 </head>
 <body>
@@ -178,7 +203,11 @@
 		<div class="product_name"><s:property value="foodinfo.foodName"/></div>
 		<div class="price"><s:property value="foodinfo.price"/>￥</div>
 		<form>
-		    <input id="number" type="text" name="buynumber" onFocus="this.value=''" value="数量">
+		    <input id="number" type="text" name="buynumber" value="1">
+		    <div class="add_reduce">
+		    	<div class="add"></div>
+		    	<div class="reduce"></div>
+		    </div>
 			<a href='javascript:Cartadd(<s:property value="foodinfo.id"/>)' class="add_to_cart">放入购物车</a>	
 		</form>	  
 	</div>
@@ -206,17 +235,27 @@
 <script src="js/jquery.js"></script>
 <!-- <script src="js/gofit.js"></script> -->
 <script src="js/common.js"></script>
+<script>
+	$(".add").click(function(){
+		$("#number").attr("value",parseInt($("#number").val()) + 1);
+	})
+	$(".reduce").click(function(){
+		if(parseInt($("#number").val())>1){
+			$("#number").attr("value",parseInt($("#number").val()) - 1);
+		}
+	})
+</script>
 <script type='text/javascript'>
-//     (function(m, ei, q, i, a, j, s) {
-//         m[a] = m[a] || function() {
-//             (m[a].a = m[a].a || []).push(arguments)
-//         };
-//         j = ei.createElement(q),
-//             s = ei.getElementsByTagName(q)[0];
-//         j.async = true;
-//         j.src = i;
-//         s.parentNode.insertBefore(j, s)
-//     })(window, document, 'script', '//eco-api.meiqia.com/dist/meiqia.js', '_MEIQIA');
-//     _MEIQIA('entId', 1835);
-// </script>
+    (function(m, ei, q, i, a, j, s) {
+        m[a] = m[a] || function() {
+            (m[a].a = m[a].a || []).push(arguments)
+        };
+        j = ei.createElement(q),
+            s = ei.getElementsByTagName(q)[0];
+        j.async = true;
+        j.src = i;
+        s.parentNode.insertBefore(j, s)
+    })(window, document, 'script', '//eco-api.meiqia.com/dist/meiqia.js', '_MEIQIA');
+    _MEIQIA('entId', 1835);
+</script>
 </html>

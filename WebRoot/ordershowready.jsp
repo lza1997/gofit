@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="shortcut icon" href="images/logo-ico.ico">
 <title></title>
 <script language="javascript">
 <!--
